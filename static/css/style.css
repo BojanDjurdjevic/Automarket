@@ -1,0 +1,231 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+body {
+    border: 0.0625rem solid rgb(190, 29, 29);
+}
+
+header {
+    background-color: rgb(190, 29, 29);
+    color: white;
+    padding: 0.5rem;
+    margin-bottom: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    width: 60vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 {
+    text-align: center;
+}
+
+img {
+    width: 12rem;
+    height: 12rem;
+    border: 0.1325rem solid rgb(137, 35, 35);
+    padding: 0.25rem;
+    box-shadow: 0 0 0.5rem 0.5rem rgb(246, 245, 245);
+}
+label {
+    color: white;
+    margin-left: 3rem;
+}
+
+footer {
+    background-color: rgb(190, 29, 29);
+    color: white;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.car_profile {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 3rem;
+    margin: 1rem;
+    padding: 1rem;
+    border: 0.0625rem solid rgb(137, 35, 35);
+}
+
+.menu_btn {
+    display: none;
+}
+#modal {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(16, 16, 16);
+    opacity: 0.95;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+}
+.new_car {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 1rem;
+}
+.new_car input, .new_car select {
+    min-width: 15rem;
+    max-width: 25rem;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+.new_car button {
+    width: 12rem;
+    height: 3rem;
+    margin-top: 2rem;
+    font-size: 1.3rem;
+    background-color: rgb(21, 205, 21);
+    border-radius: 10%;
+}
+.price {
+    font-weight: bold;
+    border: 0.0625rem solid darkred;
+    border-radius: 9%;
+    text-align: center;
+    width: 9rem;
+    background-color: orange;
+}
+.delete_button, .edit_button, .view_button, .close_all_data_button {
+    background-color: rgb(137, 27, 27);
+    color: white;
+    border: 0.0625rem solid darkred;
+    border-radius: 12%;
+    padding: 1rem 0.5rem;
+    width: 4rem;
+    margin-right: 2rem;
+}
+#add {
+    display: block;
+    background-color: rgb(110, 110, 255);
+    color: white;
+    border: 0.0625rem solid blue;
+    border-radius: 9%;
+    padding: 1rem 0.5rem;
+    width: 9rem;
+    margin-left: 1rem;
+}
+
+#menu_div {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(190, 29, 29);
+    opacity: 95%;
+}
+
+#car_all_data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.car_page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.car_all_info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: space-around;
+    justify-content: space-between;
+    justify-items: center;
+    width: 27rem;
+    padding: 1rem;
+    margin: 1rem;
+}
+.car_all_info p {
+    font-weight: bold;
+}
+.all, .pas {
+    display: none;
+}
+
+#all, #pas {
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+@media all and (max-width: 680px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 2rem;
+    }
+    nav {
+        display: none;
+    }
+    .car_profile {
+        padding: 1.1rem;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "avatar"
+        "price"
+        "info";
+    }
+    .car_avatar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        grid-area: avatar;
+    }
+    .car_info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        grid-area: info;
+    }
+    .price {
+        margin-left: 0;
+    }
+    #price {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-area: price;
+    }
+    .menu_btn {
+        display: block;
+    }
+    .new_car {
+        grid-template-columns: 1fr 1fr;
+    }
+    .new_car input, .new_car select {
+        min-width: none;
+    }
+}
