@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automarket</title>
+    <script src="https://kit.fontawesome.com/92df62f187.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+    <header id="header">
+        <h1>Automarket</h1>
+        <nav>
+            <p><a href="#header">HOME</a></p>
+            <p><a href="#footer">GO TO BOTTOM</a></p>
+            <p><a href="#">SEARCH</a></p>
+        </nav>
+        <div class="menu_btn">
+            <i class="fa-solid fa-bars fa-3x"></i>
+        </div>
+    </header>
+    
+    <div id="menu_div">
+        <p><a href="#header">HOME</a></p>
+        <p><a href="#footer">GO TO BOTTOM</a></p>
+        <p><a href="#">SEARCH</a></p>
+        <p><button>CLOSE</button></p>
+    </div>
+
+    <button id="add" class="add">
+        Add new car
+    </button>
+    <div id="modal">
+        <div class="all">
+            <p id="all">The feelds must be filled out with at least 2 characters!</p>
+        </div>
+        <div class="pas">
+            <p id="pas">The password must be filled out with only 4 characters</p>
+        </div>
+        <div class="new_car">
+            <input type="hidden" id="input_id" />
+            
+            <div>
+                <label for="make">Make</label>
+                <select id="make">
+                    <option value="Alfa Romeo">Alfa Romeo</option>
+                    <option value="Audi">Audi</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Citroen">Citroen</option>
+                    <option value="Fiat">Fiat</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Lancia">Lancia</option>
+                    <option value="Mazda">Mazda</option>
+                    <option value="Mercedes">Mercedes</option>
+                    <option value="Opel">Opel</option>
+                    <option value="Peugeot">Peugeot</option>
+                    <option value="Seat">Seat</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                </select>
+            </div>
+            <div>
+                <label for="model">Model</label>
+                <input type="text" id="model" />
+            </div>
+            <div>
+                <label for="year">Year</label>
+                <input type="text" id="year" />
+            </div>
+            <div>
+                <label for="type">Type</label>
+                <input type="text" id="type" />
+            </div>
+            <div>
+                <label for="fuel">Fuel</label>
+                <input type="text" id="fuel" />
+            </div>
+            <div>
+                <label for="engine">Engine</label>
+                <input type="text" id="engine" />
+            </div>
+            <div>
+                <label for="power">Power</label>
+                <input type="text" id="power" />
+            </div>
+            <div>
+                <label for="km">Km</label>
+                <input type="text" id="km" />
+            </div>
+            <div>
+                <label for="gear">Gear type</label>
+                <input type="text" id="gear" />
+            </div>
+            <div>
+                <label for="color">Color</label>
+                <input type="text" id="color" />
+            </div>
+            <div>
+                <label for="registration">Registred to:</label>
+                <input type="text" id="registration" />
+            </div>
+            <div>
+                <label for="price">Price:</label>
+                <input type="text" id="price" />
+            </div>
+            <div>
+                <label for="change">Zamena:</label>
+                <input type="text" id="change" />
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" />
+            </div>
+            <button id="save" class="save">Save</button>
+            <button id="cancel" class="cancel">Cancel</button>
+        </div>
+        
+    </div>
+    <div id="autos"></div>
+
+
+    <template id="car_template">
+        <div class="car_profile">
+            <div class="car_avatar">
+                <img src="##avatar##" />
+            </div>
+            <div class="car_info">
+                <p>##year##</p>
+                <p>##make## ##model##</p>
+                <p>##motor##cm ##power##ks</p>
+                <p>##km##km</p>
+                <p>
+                    <button data-id="##id##" data-password="##password##" class="edit_button">Edit</button>
+                    <button data-id="##id##" data-name="##make## ##model##" data-password="##password##"
+                    class="delete_button">Delete</button>
+                    <button data-id="##id##"
+                    class="view_button">View</button>
+                </p>
+            </div>
+            <div id="price">
+                <p class="price">##price## EUR</p>
+            </div>
+        </div>
+    </template>
+
+    <template id="car_all_data">
+        <div class="car_page">
+            <div class="car_avatar">
+                <img src="##avatar##" />
+            </div>
+            <div id="unique_price">
+                <p class="price">##price## EUR</p>
+            </div>
+            <div class="car_all_info">
+                <p>Make:</p>
+                <p>##make##</p>
+                <p>Model:</p>
+                <p>##model##</p>
+                <p>Body type:</p>
+                <p>##type##</p>
+                <p>Year:</p>
+                <p>##year##</p>
+                <p>Kilometers</p>
+                <p>##km##km</p>
+                <p>Engine:</p>
+                <p>##motor##cm</p>
+                <p>Power:</p>
+                <p>##power##ks</p>
+                <p>Gear:</p>
+                <p>##gear##</p>
+                <p>Fuel type:</p>
+                <p>##fuel##</p>
+                <p>Color:</p>
+                <p>##color##</p>
+                <p>Registred up to:</p>
+                <p>##reg##</p>
+                <p>Change:</p>
+                <p>##ch##</p>
+                
+            </div>
+            <p>
+                <button data-id="##id##" data-password="##password##" class="close_all_data_button">CLOSE</button>
+            </p>
+            
+        </div>
+    </template>
+
+    <footer id="footer">
+        <p><a href="#header">GO TO TOP</a></p>
+        <p>&copy; AUTOMARKET D.O.O</p>
+    </footer>
+    <script src="/js/autos.js"></script>
+</body>
+</html>
