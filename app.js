@@ -11,7 +11,7 @@ app.use(cors())
 app.use(bodyParser.json())
 
 app.get("/", (request, response) => {
-    response.sendFile(__dirname + "/index.html")
+    response.sendFile(__dirname + "/pages/index.html")
 })
 app.get("/autos", (request, response) => {
     response.json(DB.JSON())
